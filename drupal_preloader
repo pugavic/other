@@ -1,0 +1,28 @@
+ .ajax-progress .message,
+.ajax-progress-throbber .message{
+  color: white;
+  font-size: 20px;
+  padding: 30px;
+}
+.ajax-progress .throbber,
+ .ajax-progress-throbber .throbber {
+  float: none;
+  margin: 250px auto 0 auto;
+  width: 128px;
+  height: 128px;
+  background: url("/sites/all/themes/landseacables/app/img/preloader.gif") no-repeat center center;
+}
+.ajax-progress,
+ .ajax-progress-throbber {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 100500;
+  vertical-align: top;
+  text-align: center;
+  opacity:0.5;
+}
+
