@@ -12,13 +12,14 @@
 
         // Emulate submit next-step.
         $('a.product-item-wrapper', context).once("lsc_cable_builder").click(function () {
-            console.log("privet2");
+            preloader_watch();
             $('input[id^="edit-next-step"]').trigger('mousedown');
             return false;
         });
 
         // Emulate on diagram page submit button click where link.
         $('a.diagram-item-wrapper', context).once("lsc_cable_builder2").on("click", function (e) {
+            preloader_watch();
             id_elem = "#submit-diagram-" + $(this).attr("href").substr(1);
             $(id_elem).trigger('mousedown');
             return false;
@@ -26,87 +27,68 @@
 
       // Set active options highlight.
       $('input[id^="link-"]').mousedown(function(){
+          preloader_watch("#wizard-products-content");
         $('input[id^="link-"]').removeClass('active-option');
         $(this).addClass('active-option');
       });
 
       // Emulate "back" button.
-      $('div[id*="-wizard-header-top-step"]').click(function(){
-             var preloader = $('#page-preloader2'),
-        spinner   = preloader.find('.spinner');
-  
-          var show_preloader = function(){
-             spinner.fadeIn();
-          };
-          var hide_preloader = function(){
-              spinner.hide();
-              preloader.hide();
-          };
-                var interval,once_timer ;
-                var id_wrapper = "#wizard-form-wrapper";
-                var ajax_mark = "#ajax_mark";
-                 var id_wrapper_obj = $(id_wrapper);
-                var ajax_mark_obj = $(id_wrapper+">"+ajax_mark);
-                var add_label = function() {
-                     id_wrapper_obj.prepend($(ajax_mark));
-                };
-
-                 var remove_label = function() {
-                    ajax_mark_obj.remove();
-
-                };
-
-                var check_label = function() {
-                    if(! ajax_mark_obj.length()){
-                        hide_preloader();
-                       clearInterval(interval);
-                    }
-                      
-                };
-                
-                
-          
+      $('.sel-prod-fields').click(function(){
         var regexp = /\d+/g;
         var matches = $(this).attr('id').match(regexp);
         console.log(Drupal.settings.lsc_cable_builder.cablePath);
         console.log('back to step ' + matches[0]);
-        show_preloader();
-        add_label();
-        
-        interval = setInterval("check_label",50)
-        once_timer = setTimeout(function(){alert("privet");hide_preloader();clearInterval(interval);},3000);
-//        $.ajax({
-//          type: "POST",
-//          url: Drupal.settings.lsc_cable_builder.cablePath + '/builder/prev_step/' + matches[0],
-//          //data: { prev_step: matches[0]},
-//          success: function(return_data){
-//            
-//            $('input[id^="edit-prev-step"]', context ).trigger('mousedown');
-//             hide_preloader();
-//          }
-//          
-//          
-//        });
+        preloader_watch();
+        $.ajax({
+          type: "POST",
+          url: Drupal.settings.lsc_cable_builder.cablePath + '/builder/prev_step/' + matches[0],
+          //data: { prev_step: matches[0]},
+          success: function(return_data){
+            $('input[id^="edit-prev-step"]', context ).trigger('mousedown');
+          }
+        });
       });
-                   
+            
        
     }
   };
 
 })(jQuery);
 
+function preloader_watch(id_wrapper, mark_name, min_time, max_time) {
+    id_wrapper = id_wrapper || "#wizard-form-wrapper";
+    mark_name = mark_name || "ajax-builder-mark";
+    min_time = min_time || 50;
+    max_time = max_time || 10000;
 
+    var preloader = $('#page-preloader'),
+            spinner = $('#page-preloader .spinner'),
+            interval, once_timer;
 
-function add_label(id_elem,lab_id){
-    var el = $(id_elem);
-    el.prepend($(lab_id));
-}
+    var start_proccess = function () {
+        spinner.show();
+        preloader.show();
+        $(id_wrapper).addClass(mark_name);
+    };
 
-function remove_label(id_elem,lab_id){
-       $(id_elem+">"+lab_id).remove();
-    
-}
+    var end_proccess = function () {
+        $(id_wrapper).removeClass(mark_name);
+        preloader.hide();
+        clearInterval(interval);
+        clearTimeout(once_timer);
+    };
 
-function check_label(id_elem,lab_id){
-   return $(id_elem+">"+lab_id).length();
+    start_proccess();
+
+    interval = setInterval(function () {
+        if (!$(id_wrapper).hasClass(mark_name)) {
+            end_proccess();
+        }
+    }, min_time);
+
+    once_timer = setTimeout(function () {
+        end_proccess();
+    }
+    , max_time);
+
 }
