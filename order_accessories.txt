@@ -1,0 +1,27 @@
+function lsc_product_get_order_var($order_id) {
+    // extracts data from order
+    
+    
+    return [
+        "first" => ['image'=>'sites/default/files/styles/medium/public/shutterstock_1650470.jpg?itok=NpQN6eFu','property1' => 'Subconn', 'property2' => 'Circular', 'property3' => 1,
+            'property4' => 'Male', 'property5' => 'Yes'],
+        "second" => [
+            'image'=>'sites/default/files/styles/medium/public/default_images/no-cable.png?itok=0PbI8DnW',
+            'property1' => 'Burton', 'property2' => 'CCP-RA',
+            'property3' => 32, 'property4' => 2],
+        "third" => ['image'=>'sites/default/files/styles/medium/public/default_images/no-cable.png?itok=0PbI8DnW','property1' => 'Subconn', 'property2' => 'Circular',
+            'property3' => 1, 
+            'property4' => ['title' => 'diagram 1',
+                'image' => 'sites/default/files/styles/medium/public/%20news-img1_2.jpg?itok=yEEl2JUM']],
+    ];
+}
+
+function lsc_products(){
+    
+    $items['lsc_products_order_result'] = array(
+            'arguments' => array('items' => NULL),
+            'template' => 'templates/lsc-order-result',
+            
+        );
+            return $items;
+}
