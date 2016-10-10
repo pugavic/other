@@ -1,0 +1,109 @@
+Microsoft Windows [Version 6.1.7601]
+(c) Корпорация Майкрософт (Microsoft Corp.), 2009. Все права защищены.
+
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other> Том в устройстве C не имеет метки.
+ Серийный номер тома: C495-711A
+
+ Содержимое папки C:\Users\Sergey2\Desktop\other
+
+08.09.2016  22:08    <DIR>          .
+08.09.2016  22:08    <DIR>          ..
+04.09.2016  18:19             2 752 ajax_builder.js
+04.09.2016  18:30             2 295 block_preloader_widget.inc
+01.09.2016  10:27                 7 block_preloader_widget.inc.inc
+02.09.2016  16:57               589 drupal_preloader
+08.09.2016  22:08               143 fsdfsd.txt
+05.09.2016  22:54             1 865 lsc-order-result.tpl.php
+07.09.2016  23:47             2 773 lsc_products.orders.inc
+08.09.2016  09:15             3 149 new_lsc_products.orders.inc
+06.09.2016  09:00             1 214 order_accessories.txt
+07.09.2016  08:18             3 174 views-view-fields--lsc-view-orders--block.tpl.php
+              10 файлов         17 961 байт
+               2 папок  114 679 402 496 байт свободно
+
+C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other
+
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>
+
+C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>Описание:
+        SC представляет собой программу командной строки, используемую
+        для связи со службами и диспетчером управления службами.
+Использование:
+        sc <сервер> [команда] [имя службы] <параметр1> <параметр2>...
+
+
+        Параметр <сервер> задается в формате "\Имя_сервера".
+        Для получения справки о командах введите "sc [команда]"
+        Команды:
+          query-----------Запрос состояния службы или перечисление
+                          состояний типов служб.
+          queryex---------Запрос расширенного состояния службы или
+                          перечисление состояний типов служб.
+          start-----------Запуск службы.
+          pause-----------Отправка службе управляющего запроса PAUSE.
+          interrogate-----Отправка службе управляющего запроса INTERROGATE.
+          continue--------Отправка службе управляющего запроса CONTINUE.
+          stop------------Отправка службе запроса STOP.
+          config----------Изменение конфигурации службы (постоянное).
+          description-----Изменение описания службы.
+          failure---------Изменение действия, выполняемого службой при сбое.
+          failureflag-----Изменение флага действия, выполняемого службой при
+                          сбое.
+          sidtype---------Изменение типа SID службы.
+          privs-----------Изменение привилегий, требуемых для службы.
+          qc--------------Запрос данных конфигурации для службы.
+          qdescription----Запрос описания службы.
+          qfailure--------Запрос действия, выполняемого службой при сбое.
+          qfailureflag----Запрос флага действия, выполняемого службой при сбое.
+          qsidtype--------Запрос типа SID службы.
+          qprivs----------Запрос привилегий, требуемых для службы.
+          qtriggerinfo----Запрос параметров службы.
+          qpreferrednode--Запрос предпочтительного узла NUMA службы.
+          delete----------Удаление службы (из реестра).
+          create----------Создание службы (добавление ее в реестр).
+          control---------Отправка службе управляющего сигнала.
+          sdshow----------Отображение дескриптора безопасности службы.
+          sdset-----------Установка дескриптора безопасности службы.
+          showsid---------Отображение строки SID службы, соответствующей
+                          произвольному имени.
+          triggerinfo-----Настройка параметров триггеров службы.
+          preferrednode---Задание предпочтительного узла NUMA службы.
+          GetDisplayName--Получение параметра DisplayName для службы.
+          GetKeyName------Получение имени раздела для службы (ServiceKeyName).
+          EnumDepend------Перечисление зависимостей службы.
+
+        Следующие команды не требуют имени службы:
+        sc <сервер> <команда> <параметры>
+          boot------------(ok | bad) Показывает, требуется ли сохранить
+                          последнюю загрузку в качестве последней удачной
+                          конфигурации загрузки
+          Lock------------Блокировка базы данных служб
+          QueryLock-------Запрос состояния блокировки (LockStatus) базы данных
+                          диспетчера управления службами (SCManager)
+Пример:
+        sc start MyService
+
+Показать справку для команд QUERY и QUERYEX? [Y(да)/N(нет)]: 
+
+
+C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>
+C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>C:\Users\Sergey2\Desktop\other>
